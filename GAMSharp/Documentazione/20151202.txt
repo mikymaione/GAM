@@ -1,0 +1,59 @@
+Centro La Tenda ONLUS, incontro del 02/12/2015
+Dall'incontro del 02/12/2015 con il direttore del centro, due educatrici e Paolo, è emerso:
+
+Ho ricevuto copia cartacea ma aspetto file WORD di:
+scheda primo contatto scheda valutazione percorso formativo, scheda iscrizione, PEI
+
+[X] Ente:
+[X] gestire descrizione, tipo
+
+[X] Elemento lista di attesa:
+[X] gestire ente di provenienza
+
+[X] Persona:
+[X] gestire nazionalità, professione, adesione a gruppo sostegno genitorialità
+
+[X] Assitente sociale:
+[X] gestire cognome, nome, tel, email, csst, municipalità
+
+[ ] Minore:
+[X] censire attività extra (descrizione e luogo)
+[X] gestire colloqui
+[X] gestire PEIs
+[X] gestire storico sottoscrizione PEI
+[X] creare un nucleo familiare (l'informazione è ovviamente valida per tutti i componenti del nucleo, quindi se vado sul fratello vedrò lo stesso nucleo)
+[ ] gestire chi ritira il minore al centro, la scuola e la classe che frequenta, sostegno scolastico, altre attività, relazione genitori (coniugati, divorziati, separati, famiglia di fatto),soggetto invitante, note salute, stato (non iscritto, iscritto, rifiuto, abbandona, percorso completato), motivo abbandono
+
+[X] PEI:
+[X] gestire data creazione, data compilazione, dimissione data, dimissione motivo, stato (compilato, dimesso, sottoscritto, incompilazione), altri dati da prendere dal file WORD
+
+[X] Storico sottoscrizione PEI:
+[X] gestire inzio, fine, note
+
+[X] Laboratorio:
+[X] gestire date in cui si svolgono
+
+[X] Laboratorio svolto:
+[X] gestire: data, note, lista partecipanti (minore)
+
+[X] Colloquio (sono collegate al minore):
+[X] gestire inizio, fine, descrizione, note, non mostrare in PEI, lista partecipanti (enti e persone)
+
+[X] Plenaria (sono collegate al centro):
+[X] gestire descrizione, note, inizio, fine, lista partecipanti (enti e persone)
+
+[X] Gruppo sostegno genitorialità:
+[X] gestire descrizione, inizio, fine, note, lista partecipanti (persone where persone.adesione_a_gruppo_sostegno_genitorialità == true)
+
+[X] Implementare una griglia di selezione partecipanti con checkbox molto facile e veloce da usare
+
+[X] Informazioni del centro:
+[X] descrizione, municipalità, csst
+
+[ ] Scheda di iscrizione:
+[ ] gestire chi la firma, n. protocollo
+
+[ ] Scheda di primo contatto:
+[ ] gestire motivo iscrizione, n. protocollo
+
+[ ] Ogni 4 mesi popup all'educatrice di compilare il PEI (where educatrice.scaglione = minore.scaglione and minore.UsaPei == true)

@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMSharp", "GAMSharp\GAMSharp.csproj", "{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GAM_Setup", "GAM_Setup\GAM_Setup.vdproj", "{B7AB72D7-702E-40EC-A7DC-EDFF6C9D683B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMSharpOptions", "GAMSharpOptions\GAMSharpOptions.csproj", "{A121AE99-D612-4ED3-87BD-0725575FC83F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMSharpUpdate", "GAMSharpUpdate\GAMSharpUpdate.csproj", "{1ADACABE-F0FE-4802-97A2-1F1F688AB7C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMSharpDBBK", "GAMSharpDBBK\GAMSharpDBBK.csproj", "{C901BB68-8DAD-4676-A356-3C5D915992B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalFunctions", "GlobalFunctions\GlobalFunctions.csproj", "{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Design|Any CPU = Design|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}.Design|Any CPU.ActiveCfg = Design|Any CPU
+		{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}.Design|Any CPU.Build.0 = Design|Any CPU
+		{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AB72D7-702E-40EC-A7DC-EDFF6C9D683B}.Debug|Any CPU.ActiveCfg = Debug
+		{B7AB72D7-702E-40EC-A7DC-EDFF6C9D683B}.Design|Any CPU.ActiveCfg = Design
+		{B7AB72D7-702E-40EC-A7DC-EDFF6C9D683B}.Release|Any CPU.ActiveCfg = Release
+		{B7AB72D7-702E-40EC-A7DC-EDFF6C9D683B}.Release|Any CPU.Build.0 = Release
+		{A121AE99-D612-4ED3-87BD-0725575FC83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A121AE99-D612-4ED3-87BD-0725575FC83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A121AE99-D612-4ED3-87BD-0725575FC83F}.Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{A121AE99-D612-4ED3-87BD-0725575FC83F}.Design|Any CPU.Build.0 = Debug|Any CPU
+		{A121AE99-D612-4ED3-87BD-0725575FC83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A121AE99-D612-4ED3-87BD-0725575FC83F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ADACABE-F0FE-4802-97A2-1F1F688AB7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADACABE-F0FE-4802-97A2-1F1F688AB7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADACABE-F0FE-4802-97A2-1F1F688AB7C9}.Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADACABE-F0FE-4802-97A2-1F1F688AB7C9}.Design|Any CPU.Build.0 = Debug|Any CPU
+		{1ADACABE-F0FE-4802-97A2-1F1F688AB7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADACABE-F0FE-4802-97A2-1F1F688AB7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C901BB68-8DAD-4676-A356-3C5D915992B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C901BB68-8DAD-4676-A356-3C5D915992B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C901BB68-8DAD-4676-A356-3C5D915992B8}.Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{C901BB68-8DAD-4676-A356-3C5D915992B8}.Design|Any CPU.Build.0 = Debug|Any CPU
+		{C901BB68-8DAD-4676-A356-3C5D915992B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C901BB68-8DAD-4676-A356-3C5D915992B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}.Design|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}.Design|Any CPU.Build.0 = Debug|Any CPU
+		{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

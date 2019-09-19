@@ -1,0 +1,1 @@
+﻿User=SYSDBA;Password=masterkey;Database=[CURRENTPATH]\GAM#.FDB;DataSource=;

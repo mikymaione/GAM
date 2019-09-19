@@ -1,0 +1,1631 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="GAM#" id="Project_12b1fa7" template="Default" database="Firebird" >
+	<schema name="Default" schemaname="Default" >
+		<table name="ASSISTENTESOCIALE" >
+			<column name="IDLEAD" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MUNICIPALITA" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="CSST" type="integer" length="10" decimal="0" jt="4" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_25" unique="PRIMARY_KEY" >
+				<column name="IDLEAD" />
+			</index>
+			<index name="RDB$FOREIGN14" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN15" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN16" unique="NORMAL" >
+				<column name="CSST" />
+			</index>
+			<fk name="INTEG_28" to_schema="Default" to_table="ENTE" >
+				<fk_column name="CSST" pk="ID" />
+			</fk>
+			<fk name="INTEG_29" to_schema="Default" to_table="LEAD" >
+				<fk_column name="IDLEAD" pk="ID" />
+			</fk>
+			<fk name="INTEG_26" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_27" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="ATTIVITAEXTRA" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDENTE" type="integer" length="10" decimal="0" jt="4" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<column name="ATTIVITADELTERRITORIO" type="char" length="1" decimal="0" jt="1" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_246" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN142" unique="NORMAL" >
+				<column name="IDENTE" />
+			</index>
+			<index name="RDB$FOREIGN143" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN144" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN145" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_249" to_schema="Default" to_table="ENTE" >
+				<fk_column name="IDENTE" pk="ID" />
+			</fk>
+			<fk name="INTEG_250" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_251" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_252" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="CENTRO" >
+			<column name="CODICE" type="varchar" length="3" decimal="0" jt="12" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<column name="LOTTO" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="MUNICIPALITA" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="CSST" type="integer" length="10" decimal="0" jt="4" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_225" unique="PRIMARY_KEY" >
+				<column name="CODICE" />
+			</index>
+			<index name="RDB$FOREIGN129" unique="NORMAL" >
+				<column name="CSST" />
+			</index>
+			<index name="RDB$FOREIGN130" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN131" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_227" to_schema="Default" to_table="ENTE" >
+				<fk_column name="CSST" pk="ID" />
+			</fk>
+			<fk name="INTEG_228" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_229" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="COLLOQUIO" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="INIZIO" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="FINE" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="MOSTRAINPEI" type="char" length="1" decimal="0" jt="1" >
+				<defo>&#039;F&#039;</defo>
+			</column>
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_191" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN106" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN107" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN108" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_195" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_196" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_197" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="COLLOQUIOPRESENZE" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDCOLLOQUIO" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PERSONA_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="LEAD_ID" type="integer" length="10" decimal="0" jt="4" />
+			<column name="ENTE_ID" type="integer" length="10" decimal="0" jt="4" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_199" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN110" unique="NORMAL" >
+				<column name="IDCOLLOQUIO" />
+			</index>
+			<index name="RDB$FOREIGN111" unique="NORMAL" >
+				<column name="PERSONA_CF" />
+			</index>
+			<index name="RDB$FOREIGN112" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN113" unique="NORMAL" >
+				<column name="LEAD_ID" />
+			</index>
+			<index name="RDB$FOREIGN114" unique="NORMAL" >
+				<column name="ENTE_ID" />
+			</index>
+			<index name="RDB$FOREIGN115" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN116" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_201" to_schema="Default" to_table="COLLOQUIO" >
+				<fk_column name="IDCOLLOQUIO" pk="ID" />
+			</fk>
+			<fk name="INTEG_205" to_schema="Default" to_table="ENTE" >
+				<fk_column name="ENTE_ID" pk="ID" />
+			</fk>
+			<fk name="INTEG_204" to_schema="Default" to_table="LEAD" >
+				<fk_column name="LEAD_ID" pk="ID" />
+			</fk>
+			<fk name="INTEG_203" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_202" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="PERSONA_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_206" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_207" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="COMUNI" >
+			<column name="CODICE" type="varchar" length="4" decimal="0" jt="12" mandatory="y" />
+			<column name="PROVINCIA" type="varchar" length="2" decimal="0" jt="12" mandatory="y" />
+			<column name="DESCRIZIONEITALIA" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<column name="DESCRIZIONEESTERA" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="CODCAT" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="UFFCATTERR" type="varchar" length="2" decimal="0" jt="12" />
+			<column name="UFFCATFABB" type="varchar" length="2" decimal="0" jt="12" />
+			<column name="COD_CONSERVAT" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="CONSERVAT" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="CODISTAT" type="integer" length="10" decimal="0" jt="4" />
+			<column name="INATTESAVCTTERR" type="varchar" length="1" decimal="0" jt="12" />
+			<column name="INATTESAVCTFABB" type="varchar" length="1" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_240" unique="PRIMARY_KEY" >
+				<column name="CODICE" />
+			</index>
+			<index name="RDB$FOREIGN139" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN140" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_243" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_244" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="EDUCATRICE" >
+			<column name="PERSONA_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="IDSCAGLIONIDIETA" type="integer" length="10" decimal="0" jt="4" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_127" unique="PRIMARY_KEY" >
+				<column name="PERSONA_CF" />
+			</index>
+			<index name="RDB$FOREIGN70" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN71" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN73" unique="NORMAL" >
+				<column name="IDSCAGLIONIDIETA" />
+			</index>
+			<fk name="INTEG_128" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_129" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+			<fk name="INTEG_130" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="PERSONA_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_131" to_schema="Default" to_table="SCAGLIONIDIETA" >
+				<fk_column name="IDSCAGLIONIDIETA" pk="ID" />
+			</fk>
+		</table>
+		<table name="EDUCATRICE_LABORATORIO" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="CFEDUCATRICE" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="IDLABORATORIO" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_143" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN80" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN81" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN82" unique="NORMAL" >
+				<column name="CFEDUCATRICE" />
+			</index>
+			<index name="RDB$FOREIGN83" unique="NORMAL" >
+				<column name="IDLABORATORIO" />
+			</index>
+			<fk name="INTEG_148" to_schema="Default" to_table="EDUCATRICE" >
+				<fk_column name="CFEDUCATRICE" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_149" to_schema="Default" to_table="LABORATORIO" >
+				<fk_column name="IDLABORATORIO" pk="ID" />
+			</fk>
+			<fk name="INTEG_146" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_147" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="ENTE" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="400" decimal="0" jt="12" mandatory="y" />
+			<column name="TIPO" type="varchar" length="2" decimal="0" jt="12" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_14" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN8" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN9" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_17" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_18" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="GRUPPOSOSTEGNOG" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="INIZIO" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="FINE" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_269" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN158" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN159" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_272" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_273" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="GSG_PARTECIPANTI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDGRUPPOSOSTEGNOG" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_275" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN161" unique="NORMAL" >
+				<column name="IDGRUPPOSOSTEGNOG" />
+			</index>
+			<index name="RDB$FOREIGN162" unique="NORMAL" >
+				<column name="CF" />
+			</index>
+			<index name="RDB$FOREIGN163" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN164" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_278" to_schema="Default" to_table="GRUPPOSOSTEGNOG" >
+				<fk_column name="IDGRUPPOSOSTEGNOG" pk="ID" />
+			</fk>
+			<fk name="INTEG_279" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_280" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_281" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="INDIRIZZI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ENTITA_TIPO" type="varchar" length="150" decimal="0" jt="12" mandatory="y" />
+			<column name="ENTITA_KEY" type="blob sub_type 0" decimal="0" jt="-4" mandatory="y" />
+			<column name="TIPO" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="INDIRIZZO" type="varchar" length="300" decimal="0" jt="12" mandatory="y" />
+			<column name="CAP" type="varchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="PROVINCIA" type="varchar" length="2" decimal="0" jt="12" mandatory="y" />
+			<column name="COMUNE" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="STATO" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_47" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN25" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN26" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_56" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_57" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="INFOAGGIUNTIVE" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ENTITA_TIPO" type="varchar" length="150" decimal="0" jt="12" mandatory="y" />
+			<column name="ENTITA_KEY" type="blob sub_type 0" decimal="0" jt="-4" mandatory="y" />
+			<column name="HIDE" type="char" length="1" decimal="0" jt="1" mandatory="y" />
+			<column name="TIPO" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="ALLEGATO" type="varchar" length="260" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_31" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN19" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN20" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_36" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_37" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="LABORATORIO" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="INIZIO" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="FINE" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="CFRESPONSABILE" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="IDSCAGLIONIDIETA" type="integer" length="10" decimal="0" jt="4" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_133" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN75" unique="NORMAL" >
+				<column name="IDSCAGLIONIDIETA" />
+			</index>
+			<index name="RDB$FOREIGN76" unique="NORMAL" >
+				<column name="CFRESPONSABILE" />
+			</index>
+			<index name="RDB$FOREIGN77" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN78" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_139" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFRESPONSABILE" pk="CF" />
+			</fk>
+			<fk name="INTEG_140" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_141" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+			<fk name="INTEG_138" to_schema="Default" to_table="SCAGLIONIDIETA" >
+				<fk_column name="IDSCAGLIONIDIETA" pk="ID" />
+			</fk>
+		</table>
+		<table name="LEAD" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="COGNOME" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="NOME" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="DATADINASCITA" type="date" length="10" decimal="0" jt="91" />
+			<column name="LUOGODINASCITA" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="SESSO" type="varchar" length="1" decimal="0" jt="12" />
+			<column name="NAZIONEDINASCITA" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="PROFESSIONE" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_20" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN11" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN12" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_22" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_23" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="LISTADIATTESA" >
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="ENTRATAINLISTA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="USCITADALLALISTA" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_122" unique="PRIMARY_KEY" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN66" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN67" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_125" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_123" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_124" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="MEMBROFAMILIARE" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDNUCLEOFAMILIARE" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="FIGURA" type="varchar" length="150" decimal="0" jt="12" />
+			<column name="PERSONA_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="LEAD_ID" type="integer" length="10" decimal="0" jt="4" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_260" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN151" unique="NORMAL" >
+				<column name="IDNUCLEOFAMILIARE" />
+			</index>
+			<index name="RDB$FOREIGN152" unique="NORMAL" >
+				<column name="PERSONA_CF" />
+			</index>
+			<index name="RDB$FOREIGN153" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN154" unique="NORMAL" >
+				<column name="LEAD_ID" />
+			</index>
+			<index name="RDB$FOREIGN155" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN156" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_265" to_schema="Default" to_table="LEAD" >
+				<fk_column name="LEAD_ID" pk="ID" />
+			</fk>
+			<fk name="INTEG_264" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_262" to_schema="Default" to_table="NUCLEOFAMILIARE" >
+				<fk_column name="IDNUCLEOFAMILIARE" pk="ID" />
+			</fk>
+			<fk name="INTEG_263" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="PERSONA_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_266" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_267" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="MINORE" >
+			<column name="PERSONA_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="CONOSCENZADIRETTASERVIZIO" type="char" length="1" decimal="0" jt="1" />
+			<column name="SOGGETTOINVIANTE" type="integer" length="10" decimal="0" jt="4" />
+			<column name="MOTIVOISCRIZIONE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="IDSCAGLIONIDIETA" type="integer" length="10" decimal="0" jt="4" />
+			<column name="SCUOLA" type="integer" length="10" decimal="0" jt="4" />
+			<column name="SCUOLA_CLASSE" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="SCUOLA_NOTE" type="varchar" length="300" decimal="0" jt="12" />
+			<column name="SEGNALATODA" type="varchar" length="300" decimal="0" jt="12" />
+			<column name="INFORMAZIONISULLASALUTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DISABILITAFISICA" type="varchar" length="500" decimal="0" jt="12" />
+			<column name="DISABILITAPSICHICA" type="varchar" length="500" decimal="0" jt="12" />
+			<column name="DISAGIONONDIAGN" type="varchar" length="500" decimal="0" jt="12" />
+			<column name="DISTURBOAPPRENDIMENTO" type="varchar" length="500" decimal="0" jt="12" />
+			<column name="PARENTISTESSOPROGETTO" type="char" length="1" decimal="0" jt="1" />
+			<column name="DATAPRIMOCONTATTO" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DATAISCRIZIONE" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DATADIMISSIONE" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_93" unique="PRIMARY_KEY" >
+				<column name="PERSONA_CF" />
+			</index>
+			<index name="RDB$FOREIGN47" unique="NORMAL" >
+				<column name="IDSCAGLIONIDIETA" />
+			</index>
+			<index name="RDB$FOREIGN48" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN49" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN51" unique="NORMAL" >
+				<column name="SCUOLA" />
+			</index>
+			<index name="RDB$FOREIGN52" unique="NORMAL" >
+				<column name="SOGGETTOINVIANTE" />
+			</index>
+			<fk name="INTEG_98" to_schema="Default" to_table="ENTE" >
+				<fk_column name="SCUOLA" pk="ID" />
+			</fk>
+			<fk name="INTEG_99" to_schema="Default" to_table="ENTE" >
+				<fk_column name="SOGGETTOINVIANTE" pk="ID" />
+			</fk>
+			<fk name="INTEG_95" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_96" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+			<fk name="INTEG_97" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="PERSONA_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_94" to_schema="Default" to_table="SCAGLIONIDIETA" >
+				<fk_column name="IDSCAGLIONIDIETA" pk="ID" />
+			</fk>
+		</table>
+		<table name="NAZIONI" >
+			<column name="CONTINENTE" type="integer" length="10" decimal="0" jt="4" />
+			<column name="SIGLA" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<column name="CODICE" type="varchar" length="4" decimal="0" jt="12" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="RDB$FOREIGN136" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN137" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_237" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_238" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="NUCLEOFAMILIARE" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="CAPOFAMIGLIA" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="RELAZIONEGENITORI" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_254" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN147" unique="NORMAL" >
+				<column name="CAPOFAMIGLIA" />
+			</index>
+			<index name="RDB$FOREIGN148" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN149" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_256" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CAPOFAMIGLIA" pk="CF" />
+			</fk>
+			<fk name="INTEG_257" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_258" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="NUMERAZIONI" >
+			<column name="CODICECENTRO" type="varchar" length="3" decimal="0" jt="12" mandatory="y" />
+			<column name="SCHEDAPRIMOCONTATTO" type="integer" length="10" decimal="0" jt="4" />
+			<column name="SCHEDAISCRIZIONE" type="integer" length="10" decimal="0" jt="4" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_231" unique="PRIMARY_KEY" >
+				<column name="CODICECENTRO" />
+			</index>
+			<index name="RDB$FOREIGN134" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN135" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_232" to_schema="Default" to_table="CENTRO" >
+				<fk_column name="CODICECENTRO" pk="CODICE" />
+			</fk>
+			<fk name="INTEG_233" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_234" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="ORARILABORATORI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDLABORATORIO" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DA_ORE" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DA_MINUTI" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="A_ORE" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="A_MINUTI" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="GIORNOSETTIMANA" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_151" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN85" unique="NORMAL" >
+				<column name="IDLABORATORIO" />
+			</index>
+			<index name="RDB$FOREIGN86" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN87" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_158" to_schema="Default" to_table="LABORATORIO" >
+				<fk_column name="IDLABORATORIO" pk="ID" />
+			</fk>
+			<fk name="INTEG_159" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_160" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="PEI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="STATO" type="varchar" length="40" decimal="0" jt="12" />
+			<column name="DATA_CREAZIONE" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DATA_COMPILAZIONE" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DATA_DIMISSIONE" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="DIMISSIONE_MOTIVO" type="varchar" length="3000" decimal="0" jt="12" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_178" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN100" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN98" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN99" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<fk name="INTEG_180" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_181" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_182" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="PERSONA" >
+			<column name="CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="COGNOME" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="NOME" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="DATADINASCITA" type="date" length="10" decimal="0" jt="91" mandatory="y" />
+			<column name="LUOGODINASCITA" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="NAZIONEDINASCITA" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="NAZIONALITA" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="SESSO" type="varchar" length="1" decimal="0" jt="12" mandatory="y" />
+			<column name="PROFESSIONE" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="ADESIONEGSG" type="char" length="1" decimal="0" jt="1" />
+			<column name="PADRE_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="MADRE_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="TUTORE_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_2" unique="PRIMARY_KEY" >
+				<column name="CF" />
+			</index>
+			<index name="RDB$FOREIGN2" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN3" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN4" unique="NORMAL" >
+				<column name="PADRE_CF" />
+			</index>
+			<index name="RDB$FOREIGN5" unique="NORMAL" >
+				<column name="MADRE_CF" />
+			</index>
+			<index name="RDB$FOREIGN6" unique="NORMAL" >
+				<column name="TUTORE_CF" />
+			</index>
+			<fk name="INTEG_10" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="PADRE_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_11" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="MADRE_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_12" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="TUTORE_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_8" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_9" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="PLENARIA" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="INIZIO" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="FINE" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_209" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN118" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN119" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_212" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_213" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="PLENARIAPRESENZE" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDPLENARIA" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PERSONA_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="LEAD_ID" type="integer" length="10" decimal="0" jt="4" />
+			<column name="ENTE_ID" type="integer" length="10" decimal="0" jt="4" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_215" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN121" unique="NORMAL" >
+				<column name="IDPLENARIA" />
+			</index>
+			<index name="RDB$FOREIGN122" unique="NORMAL" >
+				<column name="PERSONA_CF" />
+			</index>
+			<index name="RDB$FOREIGN123" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN124" unique="NORMAL" >
+				<column name="LEAD_ID" />
+			</index>
+			<index name="RDB$FOREIGN125" unique="NORMAL" >
+				<column name="ENTE_ID" />
+			</index>
+			<index name="RDB$FOREIGN126" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN127" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_221" to_schema="Default" to_table="ENTE" >
+				<fk_column name="ENTE_ID" pk="ID" />
+			</fk>
+			<fk name="INTEG_220" to_schema="Default" to_table="LEAD" >
+				<fk_column name="LEAD_ID" pk="ID" />
+			</fk>
+			<fk name="INTEG_219" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_218" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="PERSONA_CF" pk="CF" />
+			</fk>
+			<fk name="INTEG_222" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_223" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+			<fk name="INTEG_217" to_schema="Default" to_table="PLENARIA" >
+				<fk_column name="IDPLENARIA" pk="ID" />
+			</fk>
+		</table>
+		<table name="PRESENZESVOLGIMENTOLABORATORIO" >
+			<column name="IDSVOLGIMENTOLABORATORIO" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="PRESENTE" type="char" length="5" decimal="0" jt="1" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_172" unique="PRIMARY_KEY" >
+				<column name="IDSVOLGIMENTOLABORATORIO" />
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN93" unique="NORMAL" >
+				<column name="IDSVOLGIMENTOLABORATORIO" />
+			</index>
+			<index name="RDB$FOREIGN94" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<index name="RDB$FOREIGN95" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN96" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_174" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_175" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_176" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+			<fk name="INTEG_173" to_schema="Default" to_table="SVOLGIMENTOLABORATORIO" >
+				<fk_column name="IDSVOLGIMENTOLABORATORIO" pk="ID" />
+			</fk>
+		</table>
+		<table name="PROBLEMIFAMILIARI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="300" decimal="0" jt="12" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_101" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN54" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN55" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN56" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<fk name="INTEG_106" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_104" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_105" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="RECAPITI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ENTITA_TIPO" type="varchar" length="150" decimal="0" jt="12" mandatory="y" />
+			<column name="ENTITA_KEY" type="blob sub_type 0" decimal="0" jt="-4" mandatory="y" />
+			<column name="TIPO" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="RECAPITO" type="varchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_39" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN22" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN23" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_44" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_45" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="RISULTATIANNUALI" >
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="ANNO" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ESITOSCOLASTICO" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="ASSIDUITALEZIONI" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="ASSIDUITALABORATORI" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="ASSIDUITAGENITORI" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="VALUTAZIONEPERCORSOFORMATIVO" type="varchar" length="3000" decimal="0" jt="12" />
+			<column name="OBBEDURAGGIUNTI" type="varchar" length="3000" decimal="0" jt="12" />
+			<column name="OBBDIDARAGGIUNTI" type="varchar" length="3000" decimal="0" jt="12" />
+			<column name="EVENTUALIRILIEVI" type="varchar" length="3000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_117" unique="PRIMARY_KEY" >
+				<column name="MINORE_CF" />
+				<column name="ANNO" />
+			</index>
+			<index name="RDB$FOREIGN62" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN63" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN64" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<fk name="INTEG_120" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_118" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_119" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="SCAGLIONIDIETA" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<column name="DA" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="A" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_86" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN44" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN45" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_90" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_91" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="STORICOS_PEI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDPEI" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="INIZIO" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="FINE" type="timestamp" length="19" decimal="0" jt="93" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_184" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN102" unique="NORMAL" >
+				<column name="IDPEI" />
+			</index>
+			<index name="RDB$FOREIGN103" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN104" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_187" to_schema="Default" to_table="PEI" >
+				<fk_column name="IDPEI" pk="ID" />
+			</fk>
+			<fk name="INTEG_188" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_189" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="SVOLGIMENTOLABORATORIO" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="IDLABORATORIO" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="DALLE" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="ALLE" type="timestamp" length="19" decimal="0" jt="93" mandatory="y" />
+			<column name="NOTE" type="varchar" length="5000" decimal="0" jt="12" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_162" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN89" unique="NORMAL" >
+				<column name="IDLABORATORIO" />
+			</index>
+			<index name="RDB$FOREIGN90" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN91" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_166" to_schema="Default" to_table="LABORATORIO" >
+				<fk_column name="IDLABORATORIO" pk="ID" />
+			</fk>
+			<fk name="INTEG_167" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_168" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="TIPOINTERVENTIREALIZZATI" >
+			<column name="ID" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ANNO" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MINORE_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="DESCRIZIONE" type="varchar" length="300" decimal="0" jt="12" mandatory="y" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_108" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="RDB$FOREIGN58" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN59" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<index name="RDB$FOREIGN60" unique="NORMAL" >
+				<column name="MINORE_CF" />
+			</index>
+			<fk name="INTEG_114" to_schema="Default" to_table="MINORE" >
+				<fk_column name="MINORE_CF" pk="PERSONA_CF" />
+			</fk>
+			<fk name="INTEG_112" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_113" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+		</table>
+		<table name="UTENTE" >
+			<column name="PERSONA_CF" type="varchar" length="16" decimal="0" jt="12" mandatory="y" />
+			<column name="EMAIL" type="varchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="PSW" type="varchar" length="40" decimal="0" jt="12" mandatory="y" />
+			<column name="TIPO" type="char" length="1" decimal="0" jt="1" >
+				<defo>&#039;U&#039;</defo>
+			</column>
+			<column name="FULLSCREEN_RICERCA" type="char" length="1" decimal="0" jt="1" />
+			<column name="FULLSCREEN_DETTAGLIO" type="char" length="1" decimal="0" jt="1" />
+			<column name="DATACREAZIONE" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="DATAMODIFICA" type="timestamp" length="19" decimal="0" jt="93" >
+				<defo>CURRENT_timestamp</defo>
+			</column>
+			<column name="CFCREAZIONE" type="varchar" length="16" decimal="0" jt="12" />
+			<column name="CFMODIFICA" type="varchar" length="16" decimal="0" jt="12" />
+			<index name="INTEG_62" unique="PRIMARY_KEY" >
+				<column name="PERSONA_CF" />
+			</index>
+			<index name="RDB$FOREIGN30" unique="NORMAL" >
+				<column name="CFCREAZIONE" />
+			</index>
+			<index name="RDB$FOREIGN31" unique="NORMAL" >
+				<column name="CFMODIFICA" />
+			</index>
+			<fk name="INTEG_65" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFCREAZIONE" pk="CF" />
+			</fk>
+			<fk name="INTEG_66" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="CFMODIFICA" pk="CF" />
+			</fk>
+			<fk name="INTEG_67" to_schema="Default" to_table="PERSONA" >
+				<fk_column name="PERSONA_CF" pk="CF" />
+			</fk>
+		</table>
+		<view name="SCHEDAISCRIZIONE" >
+			<column name="PERSONA_CF" type="varchar" />
+			<column name="COGNOME" type="varchar" />
+			<column name="NOME" type="varchar" />
+			<column name="DATAISCRIZIONE" type="timestamp" />
+			<column name="PARENTISTESSOPROGETTO" type="char" />
+		</view>
+		<view name="SCHEDAPRIMOCONTATTO" >
+			<column name="NSCHEDAPRIMOCONTATTO" type="integer" />
+			<column name="CF" type="varchar" />
+			<column name="COGNOME" type="varchar" />
+			<column name="NOME" type="varchar" />
+			<column name="LUOGODINASCITA" type="varchar" />
+			<column name="DATADINASCITA" type="date" />
+			<column name="NAZIONEDINASCITA" type="varchar" />
+			<column name="NAZIONALITA" type="varchar" />
+			<column name="COMUNECAP" type="varchar" />
+			<column name="INDIRIZZO" type="varchar" />
+			<column name="TELCASA" type="varchar" />
+			<column name="TELMOBILE" type="varchar" />
+			<column name="DATAISCRIZIONE" type="timestamp" />
+			<column name="CONOSCENZADIRETTASERVIZIO" type="char" />
+			<column name="SOGGETTOINVIANTE" type="varchar" />
+			<column name="MOTIVOISCRIZIONE" type="varchar" />
+			<column name="SCUOLA_CLASSE" type="varchar" />
+			<column name="SCUOLA_NOTE" type="varchar" />
+			<column name="PARENTISTESSOPROGETTO" type="char" />
+			<column name="INFORMAZIONISULLASALUTE" type="varchar" />
+			<column name="DESCSCUOLA" type="varchar" />
+			<column name="MAMMA_COGNOME" type="varchar" />
+			<column name="MAMMA_NOME" type="varchar" />
+			<column name="MAMMA_LUOGODINASCITA" type="varchar" />
+			<column name="MAMMA_DATADINASCITA" type="date" />
+			<column name="MAMMA_PROFESSIONE" type="varchar" />
+			<column name="BABBO_COGNOME" type="varchar" />
+			<column name="BABBO_NOME" type="varchar" />
+			<column name="BABBO_LUOGODINASCITA" type="varchar" />
+			<column name="BABBO_DATADINASCITA" type="date" />
+			<column name="BABBO_PROFESSIONE" type="varchar" />
+		</view>
+		<trigger name="ATTIVITAEXTRA_ID_GEN" table="ATTIVITAEXTRA" id="Trigger_514fce6" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER ATTIVITAEXTRA_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(AttivitaExtra_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="COLLOQUIOPRESENZE_ID_GEN" table="COLLOQUIOPRESENZE" id="Trigger_3fcdb3b" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER COLLOQUIOPRESENZE_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(ColloquioPresenze_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="COLLOQUIO_ID_GEN" table="COLLOQUIO" id="Trigger_51af2b" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER COLLOQUIO_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(Colloquio_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="EDUCATRICE_LABORATORIO_ID_GEN" table="EDUCATRICE_LABORATORIO" id="Trigger_11c0f40" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER EDUCATRICE_LABORATORIO_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(Educatrice_Laboratorio_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="ENTE_ID_GEN" table="ENTE" id="Trigger_499d827" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER ENTE_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(Ente_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="GRUPPOSOSTEGNOG_ID_GEN" table="GRUPPOSOSTEGNOG" id="Trigger_216290" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER GRUPPOSOSTEGNOG_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(GruppoSostegnoG_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="GSG_PARTECIPANTI_ID_GEN" table="GSG_PARTECIPANTI" id="Trigger_479cb7e" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER GSG_PARTECIPANTI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(GSG_Partecipanti_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="INDIRIZZI_ID_GEN" table="INDIRIZZI" id="Trigger_1331b19" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER INDIRIZZI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(Indirizzi_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="INFOAGGIUNTIVE_ID_GEN" table="INFOAGGIUNTIVE" id="Trigger_5610ac5" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER INFOAGGIUNTIVE_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(InfoAggiuntive_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="LABORATORIO_ID_GEN" table="LABORATORIO" id="Trigger_1e15c39" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER LABORATORIO_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(Laboratorio_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="LEAD_ID_GEN" table="LEAD" id="Trigger_33ee807" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER LEAD_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(Lead_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="MEMBROFAMILIARE_ID_GEN" table="MEMBROFAMILIARE" id="Trigger_4662479" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER MEMBROFAMILIARE_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(MembroFamiliare_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="NUCLEOFAMILIARE_ID_GEN" table="NUCLEOFAMILIARE" id="Trigger_33f94fc" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER NUCLEOFAMILIARE_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(NucleoFamiliare_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="ORARILABORATORI_ID_GEN" table="ORARILABORATORI" id="Trigger_5eb867b" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER ORARILABORATORI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(OrariLaboratori_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="PEI_ID_GEN" table="PEI" id="Trigger_262ddde" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER PEI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(PEI_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="PLENARIAPRESENZE_ID_GEN" table="PLENARIAPRESENZE" id="Trigger_4fe1562" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER PLENARIAPRESENZE_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(PlenariaPresenze_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="PLENARIA_ID_GEN" table="PLENARIA" id="Trigger_4af57d6" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER PLENARIA_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(Plenaria_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="PROBLEMIFAMILIARI_ID_GEN" table="PROBLEMIFAMILIARI" id="Trigger_27e3454" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER PROBLEMIFAMILIARI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(ProblemiFamiliari_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="RECAPITI_ID_GEN" table="RECAPITI" id="Trigger_1207a0" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER RECAPITI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(Recapiti_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="SCAGLIONIDIETA_ID_GEN" table="SCAGLIONIDIETA" id="Trigger_1313eff" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER SCAGLIONIDIETA_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(ScaglioniDiEta_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="STORICOS_PEI_ID_GEN" table="STORICOS_PEI" id="Trigger_55ceefc" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER STORICOS_PEI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(StoricoS_PEI_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="SVOLGIMENTOLABORATORIO_ID_GEN" table="SVOLGIMENTOLABORATORIO" id="Trigger_748114" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER SVOLGIMENTOLABORATORIO_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN 
+        NEW.ID = GEN_ID(SvolgimentoLaboratorio_ID_Gen, 1);
+END]]></string>
+		</trigger>
+		<trigger name="TIPOINTERVENTIREALIZZATI_ID_GEN" table="TIPOINTERVENTIREALIZZATI" id="Trigger_ae8a75" isSystem="false" >
+			<string><![CDATA[CREATE TRIGGER TIPOINTERVENTIREALIZZATI_ID_GEN AS BEGIN 
+    IF (NEW.ID IS NULL OR NEW.ID = 0) THEN
+        NEW.ID = GEN_ID(TipoInterventiRealizzati_ID_Gen, 1);
+END]]></string>
+		</trigger>
+	</schema>
+	<connector name="GAM#" database="Firebird" driver_class="org.firebirdsql.jdbc.FBDriver" driver_jar="jaybird-full-3.0.2.jar" host="localhost" port="3050" instance="c:/gam/GAM.FDB" user="SYSDBA" passwd="bWFzdGVya2V5" />
+	<layout name="Default Layout" id="Layout_3c57d98" hide_fks="INTEG_244,INTEG_243,INTEG_56,INTEG_57,INTEG_37,INTEG_36,INTEG_160,INTEG_159,INTEG_176,INTEG_175,INTEG_234,INTEG_233,INTEG_229,INTEG_228,INTEG_26,INTEG_27,INTEG_251,INTEG_252,INTEG_167,INTEG_168,INTEG_65,INTEG_66,INTEG_207,INTEG_206,INTEG_119,INTEG_118,INTEG_238,INTEG_237,INTEG_112,INTEG_113,INTEG_188,INTEG_189,INTEG_181,INTEG_182,INTEG_223,INTEG_222,INTEG_95,INTEG_96,INTEG_267,INTEG_266,INTEG_141,INTEG_140,INTEG_22,INTEG_23,INTEG_104,INTEG_105,INTEG_213,INTEG_212,INTEG_258,INTEG_257,INTEG_147,INTEG_146,INTEG_45,INTEG_44,INTEG_128,INTEG_129,INTEG_12,INTEG_11,INTEG_9,INTEG_8,INTEG_10,INTEG_280,INTEG_281,INTEG_272,INTEG_273,INTEG_123,INTEG_124,INTEG_91,INTEG_90,INTEG_197,INTEG_196,INTEG_17,INTEG_18," show_relation="columns" >
+		<entity schema="Default" name="ASSISTENTESOCIALE" color="c8f5bf" x="600" y="75" />
+		<entity schema="Default" name="COLLOQUIOPRESENZE" color="bfd4f5" x="585" y="1110" />
+		<entity schema="Default" name="ENTE" color="bfd4f5" x="840" y="1110" />
+		<entity schema="Default" name="LEAD" color="c8f5bf" x="840" y="345" />
+		<entity schema="Default" name="MEMBROFAMILIARE" color="c8f5bf" x="1095" y="375" />
+		<entity schema="Default" name="MINORE" color="bfd4f5" x="1095" y="690" />
+		<entity schema="Default" name="NUCLEOFAMILIARE" color="c8f5bf" x="1365" y="375" />
+		<entity schema="Default" name="PERSONA" color="bfd4f5" x="840" y="690" />
+		<entity schema="Default" name="PLENARIAPRESENZE" color="c8f5bf" x="600" y="795" />
+		<entity schema="Default" name="PRESENZESVOLGIMENTOLABORATORIO" color="f5ddbf" x="1080" y="1185" />
+		<entity schema="Default" name="SVOLGIMENTOLABORATORIO" color="f5ddbf" x="300" y="690" />
+		<entity schema="Default" name="ATTIVITAEXTRA" color="bfd4f5" x="300" y="375" />
+		<entity schema="Default" name="CENTRO" color="bfbff5" x="345" y="60" />
+		<entity schema="Default" name="NUMERAZIONI" color="bfbff5" x="60" y="90" />
+		<entity schema="Default" name="RECAPITI" color="bfbff5" x="840" y="45" />
+		<entity schema="Default" name="LABORATORIO" color="f5ddbf" x="585" y="360" />
+		<entity schema="Default" name="SCHEDAPRIMOCONTATTO" color="d2bff5" x="45" y="345" />
+		<entity schema="Default" name="SCHEDAISCRIZIONE" color="d2bff5" x="45" y="915" />
+		<entity schema="Default" name="INFOAGGIUNTIVE" color="c8f5bf" x="45" y="1080" />
+		<entity schema="Default" name="ORARILABORATORI" color="f5ddbf" x="1020" y="45" />
+		<entity schema="Default" name="PROBLEMIFAMILIARI" color="bfd4f5" x="1260" y="45" />
+		<entity schema="Default" name="EDUCATRICE" color="f5ddbf" x="1350" y="690" />
+		<entity schema="Default" name="EDUCATRICE_LABORATORIO" color="f5ddbf" x="1500" y="540" />
+		<entity schema="Default" name="LISTADIATTESA" color="bfd4f5" x="1395" y="960" />
+		<entity schema="Default" name="GRUPPOSOSTEGNOG" color="bfd4f5" x="1545" y="750" />
+		<entity schema="Default" name="SCAGLIONIDIETA" color="f5ddbf" x="1350" y="1215" />
+		<entity schema="Default" name="GSG_PARTECIPANTI" color="bfd4f5" x="1515" y="1140" />
+		<entity schema="Default" name="COMUNI" color="d2bff5" x="1515" y="1335" />
+		<entity schema="Default" name="PLENARIA" color="c8f5bf" x="345" y="915" />
+		<entity schema="Default" name="INDIRIZZI" color="bfd4f5" x="330" y="1125" />
+		<entity schema="Default" name="TIPOINTERVENTIREALIZZATI" color="f5ddbf" x="210" y="1410" />
+		<entity schema="Default" name="NAZIONI" color="f5ddbf" x="45" y="1410" />
+		<entity schema="Default" name="RISULTATIANNUALI" color="c8f5bf" x="1440" y="45" />
+		<entity schema="Default" name="STORICOS_PEI" color="d2bff5" x="1350" y="1425" />
+		<entity schema="Default" name="PEI" color="d2bff5" x="1080" y="1395" />
+		<entity schema="Default" name="COLLOQUIO" color="bfd4f5" x="840" y="1410" />
+		<entity schema="Default" name="UTENTE" color="bfbff5" x="555" y="1410" />
+	</layout>
+	<layout name="Layout Colloquio" id="Layout_5c23bd4" hide_fks="INTEG_95,INTEG_96,INTEG_22,INTEG_23,INTEG_10,INTEG_11,INTEG_12,INTEG_8,INTEG_9,INTEG_206,INTEG_207,INTEG_196,INTEG_197,INTEG_17,INTEG_18," show_relation="columns" >
+		<entity schema="Default" name="MINORE" color="bcd5f1" x="495" y="75" />
+		<entity schema="Default" name="LEAD" color="bcd5f1" x="45" y="45" />
+		<entity schema="Default" name="PERSONA" color="bcd5f1" x="540" y="585" />
+		<entity schema="Default" name="COLLOQUIOPRESENZE" color="bcd5f1" x="45" y="660" />
+		<entity schema="Default" name="COLLOQUIO" color="bcd5f1" x="240" y="45" />
+		<entity schema="Default" name="ENTE" color="bcd5f1" x="240" y="390" />
+	</layout>
+	<layout name="Layout Entita" id="Layout_40dd3cd" hide_fks="INTEG_128,INTEG_129,INTEG_10,INTEG_11,INTEG_12,INTEG_8,INTEG_9,INTEG_26,INTEG_27,INTEG_243,INTEG_244,INTEG_65,INTEG_66,INTEG_95,INTEG_96,INTEG_17,INTEG_18,INTEG_228,INTEG_229,INTEG_22,INTEG_23," show_relation="columns" >
+		<entity schema="Default" name="EDUCATRICE" color="bcd5f1" x="60" y="495" />
+		<entity schema="Default" name="PERSONA" color="bcd5f1" x="315" y="345" />
+		<entity schema="Default" name="ASSISTENTESOCIALE" color="bcd5f1" x="300" y="825" />
+		<entity schema="Default" name="COMUNI" color="bcd5f1" x="45" y="60" />
+		<entity schema="Default" name="UTENTE" color="bcd5f1" x="285" y="45" />
+		<entity schema="Default" name="MINORE" color="bcd5f1" x="570" y="45" />
+		<entity schema="Default" name="ENTE" color="bcd5f1" x="630" y="570" />
+		<entity schema="Default" name="CENTRO" color="bcd5f1" x="630" y="810" />
+		<entity schema="Default" name="LEAD" color="bcd5f1" x="45" y="750" />
+	</layout>
+	<layout name="Layout Laboratori" id="Layout_49142d8" show_relation="columns" >
+		<entity schema="Default" name="LABORATORIO" color="bcd5f1" x="315" y="45" />
+		<entity schema="Default" name="SCAGLIONIDIETA" color="bcd5f1" x="315" y="405" />
+		<entity schema="Default" name="SVOLGIMENTOLABORATORIO" color="bcd5f1" x="45" y="405" />
+		<entity schema="Default" name="ORARILABORATORI" color="bcd5f1" x="45" y="45" />
+		<entity schema="Default" name="EDUCATRICE_LABORATORIO" color="bcd5f1" x="570" y="45" />
+		<entity schema="Default" name="EDUCATRICE" color="bcd5f1" x="600" y="420" />
+	</layout>
+	<layout name="Layout Minore" id="Layout_733c32" show_relation="columns" >
+		<entity schema="Default" name="MINORE" color="bcd5f1" x="405" y="375" />
+		<entity schema="Default" name="MEMBROFAMILIARE" color="bcd5f1" x="105" y="900" />
+		<entity schema="Default" name="PRESENZESVOLGIMENTOLABORATORIO" color="bcd5f1" x="375" y="915" />
+		<entity schema="Default" name="PLENARIAPRESENZE" color="bcd5f1" x="690" y="915" />
+		<entity schema="Default" name="PEI" color="bcd5f1" x="75" y="555" />
+		<entity schema="Default" name="LISTADIATTESA" color="bcd5f1" x="45" y="360" />
+		<entity schema="Default" name="ATTIVITAEXTRA" color="bcd5f1" x="165" y="45" />
+		<entity schema="Default" name="PROBLEMIFAMILIARI" color="bcd5f1" x="465" y="75" />
+		<entity schema="Default" name="TIPOINTERVENTIREALIZZATI" color="bcd5f1" x="675" y="45" />
+		<entity schema="Default" name="COLLOQUIOPRESENZE" color="bcd5f1" x="810" y="270" />
+		<entity schema="Default" name="COLLOQUIO" color="bcd5f1" x="1080" y="270" />
+		<entity schema="Default" name="RISULTATIANNUALI" color="bcd5f1" x="750" y="570" />
+	</layout>
+	<layout name="Layout Plenarie" id="Layout_57d08e1" hide_fks="INTEG_222,INTEG_223,INTEG_212,INTEG_213,INTEG_95,INTEG_96,INTEG_17,INTEG_18,INTEG_22,INTEG_23,INTEG_10,INTEG_11,INTEG_12,INTEG_8,INTEG_9," show_relation="columns" >
+		<entity schema="Default" name="PLENARIAPRESENZE" color="bcd5f1" x="300" y="45" />
+		<entity schema="Default" name="PLENARIA" color="bcd5f1" x="45" y="45" />
+		<entity schema="Default" name="MINORE" color="bcd5f1" x="555" y="435" />
+		<entity schema="Default" name="ENTE" color="bcd5f1" x="585" y="60" />
+		<entity schema="Default" name="LEAD" color="bcd5f1" x="45" y="285" />
+		<entity schema="Default" name="PERSONA" color="bcd5f1" x="285" y="495" />
+	</layout>
+</project>

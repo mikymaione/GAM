@@ -1,0 +1,1077 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70644AFF-7CF2-4986-95CF-6DDFB7DE4233}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GAMSharp</RootNamespace>
+    <AssemblyName>GAMSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GAMSharp.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>GAM#.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Design|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Design\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.12.1.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\FirebirdSql.Data.FirebirdClient-4.8.0.0-NET40\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\Downloads\sqlite-netFx20-binary-bundle-Win32-2005-1.0.103.0\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\cDB.cs" />
+    <Compile Include="DB\cMemDB.cs" />
+    <Compile Include="DB\cRisultatoSQL.cs" />
+    <Compile Include="DB\DataWrapper\cRubrica.cs" />
+    <Compile Include="DB\DataWrapper\Base\cBaseDBObject.cs" />
+    <Compile Include="DB\DataWrapper\Base\cBaseEntity.cs" />
+    <Compile Include="DB\DataWrapper\Base\cBaseEntityExtendedSearch.cs" />
+    <Compile Include="DB\DataWrapper\cAggiornamenti.cs" />
+    <Compile Include="DB\DataWrapper\cAssistenteSociale.cs" />
+    <Compile Include="DB\DataWrapper\cAttivitaExtra.cs" />
+    <Compile Include="DB\DataWrapper\cCentro.cs" />
+    <Compile Include="DB\DataWrapper\cColloquio.cs" />
+    <Compile Include="DB\DataWrapper\cColloquioPresenze.cs" />
+    <Compile Include="DB\DataWrapper\cComuni.cs" />
+    <Compile Include="DB\DataWrapper\cEducatrice.cs" />
+    <Compile Include="DB\DataWrapper\cEducatrice_Laboratorio.cs" />
+    <Compile Include="DB\DataWrapper\cEnte.cs" />
+    <Compile Include="DB\DataWrapper\cGruppoSostegnoG.cs" />
+    <Compile Include="DB\DataWrapper\cGSG_Partecipanti.cs" />
+    <Compile Include="DB\DataWrapper\cIndirizzi.cs" />
+    <Compile Include="DB\DataWrapper\cInfoAggiuntive.cs" />
+    <Compile Include="DB\DataWrapper\cLaboratorio.cs" />
+    <Compile Include="DB\DataWrapper\cLead.cs" />
+    <Compile Include="DB\DataWrapper\cListaDiAttesa.cs" />
+    <Compile Include="DB\DataWrapper\cMembroFamiliare.cs" />
+    <Compile Include="DB\DataWrapper\cMinore.cs" />
+    <Compile Include="DB\DataWrapper\cNazioni.cs" />
+    <Compile Include="DB\DataWrapper\cNucleoFamiliare.cs" />
+    <Compile Include="DB\DataWrapper\cNumerazioni.cs" />
+    <Compile Include="DB\DataWrapper\cOrariLaboratori.cs" />
+    <Compile Include="DB\DataWrapper\cPEI.cs" />
+    <Compile Include="DB\DataWrapper\cPersona.cs" />
+    <Compile Include="DB\DataWrapper\cPlenaria.cs" />
+    <Compile Include="DB\DataWrapper\cPlenariaPresenze.cs" />
+    <Compile Include="DB\DataWrapper\cPresenzeSvolgimentoLaboratorio.cs" />
+    <Compile Include="DB\DataWrapper\cRecapiti.cs" />
+    <Compile Include="DB\DataWrapper\cScaglioniDiEta.cs" />
+    <Compile Include="DB\DataWrapper\cSchedaIscrizione.cs" />
+    <Compile Include="DB\DataWrapper\cSchedaPrimoContatto.cs" />
+    <Compile Include="DB\DataWrapper\cStoricoS_PEI.cs" />
+    <Compile Include="DB\DataWrapper\cSvolgimentoLaboratorio.cs" />
+    <Compile Include="DB\DataWrapper\cUtente.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\AssistenteSociale.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\AttivitaExtra.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Base\BaseDBObject.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Base\tMultiLink.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Centro.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Colloquio.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\ColloquioPresenze.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Comuni.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Educatrice.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Educatrice_Laboratorio.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Ente.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\GruppoSostegnoG.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\GSG_Partecipanti.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Indirizzi.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\InfoAggiuntive.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Laboratorio.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Lead.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\ListaDiAttesa.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\ListaDiAttesaRicerca.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\MembroFamiliare.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Minore.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\MinoreRicerca.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Nazioni.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\NucleoFamiliare.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Numerazioni.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\OrariLaboratori.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\PEI.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Persona.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Plenaria.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\PlenariaPresenze.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\PresenzeSvolgimentoLaboratorio.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\PrimaryAutoIncKeyAttribute.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\PrimaryKeyAttribute.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Recapiti.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\ScaglioniDiEta.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\StoricoS_PEI.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\SvolgimentoLaboratorio.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\TabellaBase.cs" />
+    <Compile Include="DB\DataWrapper\Tabelle\Utente.cs" />
+    <Compile Include="DB\DataWrapper\Viste\Rubrica.cs" />
+    <Compile Include="DB\DataWrapper\Viste\SchedaIscrizione.cs" />
+    <Compile Include="DB\DataWrapper\Viste\SchedaPrimoContatto.cs" />
+    <Compile Include="GB\cSetup.cs" />
+    <Compile Include="GB\MyGB.cs" />
+    <Compile Include="GB\OpzioniProgramma.cs" />
+    <Compile Include="Service References\maionemikyWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Stampe\ConstStampe.cs" />
+    <Compile Include="Stampe\cWordReplacer.cs" />
+    <Compile Include="UI\AssistenteSociale\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AssistenteSociale\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AttivitaExtra\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AttivitaExtra\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\Base\cbGriglia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Base\cBaseRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Base\cGriglia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Base\cGriglia.Designer.cs">
+      <DependentUpon>cGriglia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Base\cMultiSelectGriglia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Base\cMultiSelectGriglia.Designer.cs">
+      <DependentUpon>cMultiSelectGriglia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Base\Ex\fFakeTabbedDettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\Ex\fTabbedDettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\fBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\fBase.Designer.cs">
+      <DependentUpon>fBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Base\fBaseDettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\fBaseDettaglio.Designer.cs">
+      <DependentUpon>fBaseDettaglio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Base\fBaseRicerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\fBaseRicerca.Designer.cs">
+      <DependentUpon>fBaseRicerca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Base\fFakeDettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\fFakeRicerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Centro\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ColloquioPresenze\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ColloquioPresenze\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Colloquio\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Colloquio\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\Base\ddlPosto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\ddlComune.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\ddlNazione.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\ddlProvincia.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\ucCFTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\ucFileChoose.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\ucFileChoose.Designer.cs">
+      <DependentUpon>ucFileChoose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controlli\ucLookUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controlli\ucLookUp.Designer.cs">
+      <DependentUpon>ucLookUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controlli\ucCaseTypeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Educatrice_Laboratorio\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Educatrice\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Educatrice\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Educatrice_Laboratorio\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Ente\ComboFiller.cs" />
+    <Compile Include="UI\Ente\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Ente\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fAbout.Designer.cs">
+      <DependentUpon>fAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\fNovità.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fNovità.Designer.cs">
+      <DependentUpon>fNovità.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fScegliServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fScegliServer.Designer.cs">
+      <DependentUpon>fScegliServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fSegnalaUnProblema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fSegnalaUnProblema.Designer.cs">
+      <DependentUpon>fSegnalaUnProblema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GruppoSostegnoG\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GruppoSostegnoG\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GSG_Partecipanti\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\GSG_Partecipanti\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Indirizzi\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Indirizzi\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InfoAggiuntive\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\InfoAggiuntive\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Laboratorio\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Laboratorio\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Lead\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Lead\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ListaDiAttesa\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ListaDiAttesa\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MembroFamiliare\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MembroFamiliare\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Minore\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Minore\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NucleoFamiliare\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NucleoFamiliare\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Numerazioni\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Numerazioni\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PEI\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PEI\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlenariaPresenze\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PlenariaPresenze\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Plenaria\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Plenaria\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PresenzeSvolgimentoLaboratorio\MultiSelectGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Minore\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OrariLaboratori\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\OrariLaboratori\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Persona\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Persona\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Recapiti\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Recapiti\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Rubrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ScaglioniDiEta\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ScaglioniDiEta\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StoricoS_PEI\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\StoricoS_PEI\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SvolgimentoLaboratorio\cRicerca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SvolgimentoLaboratorio\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Utente\Dettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Utente\Ricerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="UI\AssistenteSociale\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AssistenteSociale\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AttivitaExtra\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Base\cGriglia.resx">
+      <DependentUpon>cGriglia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Base\cMultiSelectGriglia.resx">
+      <DependentUpon>cMultiSelectGriglia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Base\fBase.resx">
+      <DependentUpon>fBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Base\fBaseDettaglio.resx">
+      <DependentUpon>fBaseDettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Base\fBaseRicerca.resx">
+      <DependentUpon>fBaseRicerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Centro\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ColloquioPresenze\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Colloquio\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controlli\ucFileChoose.resx">
+      <DependentUpon>ucFileChoose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controlli\ucLookUp.resx">
+      <DependentUpon>ucLookUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Educatrice\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Educatrice\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Educatrice_Laboratorio\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Ente\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Ente\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fAbout.resx">
+      <DependentUpon>fAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\fNovità.resx">
+      <DependentUpon>fNovità.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fScegliServer.resx">
+      <DependentUpon>fScegliServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fSegnalaUnProblema.resx">
+      <DependentUpon>fSegnalaUnProblema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GruppoSostegnoG\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GruppoSostegnoG\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GSG_Partecipanti\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Indirizzi\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InfoAggiuntive\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Laboratorio\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Laboratorio\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Lead\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Lead\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ListaDiAttesa\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ListaDiAttesa\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MembroFamiliare\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Minore\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Minore\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NucleoFamiliare\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NucleoFamiliare\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Numerazioni\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Numerazioni\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OrariLaboratori\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PEI\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Persona\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Persona\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlenariaPresenze\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Plenaria\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Plenaria\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Recapiti\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Rubrica.resx">
+      <DependentUpon>Rubrica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScaglioniDiEta\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ScaglioniDiEta\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StoricoS_PEI\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SvolgimentoLaboratorio\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Utente\Dettaglio.resx">
+      <DependentUpon>Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Utente\Ricerca.resx">
+      <DependentUpon>Ricerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DB_vuoto.FDB" />
+    <None Include="Documentazione\1- Specifica dei requisiti.odt" />
+    <None Include="Documentazione\ArchitetturaGenerale.odg" />
+    <None Include="Documentazione\Architettura_Ricerca.odg" />
+    <None Include="Documentazione\Architettura_Salvataggio.odg" />
+    <None Include="Documentazione\GAM.dbs" />
+    <None Include="Documentazione\GAM.mdj" />
+    <None Include="Documentazione\GAM.odt" />
+    <None Include="Documentazione\GAM.pdf" />
+    <None Include="Documentazione\GAM_P.pdf" />
+    <None Include="Documentazione\MVC.odg" />
+    <None Include="Documentazione\MVP.odg" />
+    <None Include="Documentazione\Presentazione.odp" />
+    <None Include="GAMSharp.licenseheader" />
+    <None Include="GAMSharp.pfx" />
+    <None Include="GAMSharp_pfx" />
+    <None Include="GPL.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\GAMSharp.DB.DataWrapper.Viste.SchedaIscrizione.datasource" />
+    <None Include="Properties\DataSources\GAMSharp.DB.DataWrapper.Viste.SchedaPrimoContatto.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\maionemikyWS\emailsending.wsdl" />
+    <None Include="Stampe\PEI.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Stampe\SchedaIscrizione.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Stampe\SchedaPrimoContatto.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Stampe\SchedaValutazionePercorsoFormativo.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="DB\DataWrapper\TcLaboratorio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connessione.txt" />
+    <Content Include="DB\SQL\AssistenteSociale\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\AssistenteSociale\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\AttivitaExtra\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\AttivitaExtra\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Centro\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Centro\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\ColloquioPresenze\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\ColloquioPresenze\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Colloquio\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Comuni.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Educatrice\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Educatrice\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Educatrice_Laboratorio\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Educatrice_Laboratorio\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Ente\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\GruppoSostegnoG\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\GSG_Partecipanti\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\GSG_Partecipanti\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Indirizzi\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\InfoAggiuntive\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Laboratorio\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Laboratorio\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Lead\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\ListaDiAttesa\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\ListaDiAttesa\RicercaEx.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\MembroFamiliare\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\MembroFamiliare\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\MembroFamiliare\Trova.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Minore\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Minore\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Minore\RicercaEx.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Nazioni.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\NucleoFamiliare\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\NucleoFamiliare\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Numerazioni\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Numerazioni\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\OrariLaboratori\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PEI\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Persona\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Persona\GSG_Partecipanti.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Persona\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PlenariaPresenze\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PlenariaPresenze\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Plenaria\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PresenzeSvolgimentoLaboratorio\Aggiorna.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PresenzeSvolgimentoLaboratorio\Crea.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PresenzeSvolgimentoLaboratorio\Nuovo.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PresenzeSvolgimentoLaboratorio\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\PresenzeSvolgimentoLaboratorio\SelezionaTutti.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Recapiti\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\ScaglioniDiEta\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\StoricoS_PEI\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\SvolgimentoLaboratorio\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Utente\Carica.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Utente\GetByParam.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Utente\RecuperaPsw.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\SQL\Utente\Ricerca.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Documentazione\20151202.txt" />
+    <Content Include="Documentazione\apriConnessione.png" />
+    <Content Include="Documentazione\ArchitetturaGenerale.png" />
+    <Content Include="Documentazione\Architettura_Ricerca.png" />
+    <Content Include="Documentazione\Architettura_RicercaStar.png" />
+    <Content Include="Documentazione\Architettura_RicercaStar90.png" />
+    <Content Include="Documentazione\Architettura_Salvataggio.png" />
+    <Content Include="Documentazione\cBaseEntity.png" />
+    <Content Include="Documentazione\Classi LV1.png" />
+    <Content Include="Documentazione\Classi LV2.png" />
+    <Content Include="Documentazione\Classi LV3 DETT.png" />
+    <Content Include="Documentazione\Classi LV3.png" />
+    <Content Include="Documentazione\dieti.png" />
+    <Content Include="Documentazione\DotNet.png" />
+    <Content Include="Documentazione\fBaseDettaglio.png" />
+    <Content Include="Documentazione\FirebirdControlCenter1.png" />
+    <Content Include="Documentazione\FirebirdControlCenter2.png" />
+    <Content Include="Documentazione\fSegnalaUnProblema.png" />
+    <Content Include="Documentazione\GAM.png" />
+    <Content Include="Documentazione\GAMSharp.DB.DataWrapper.Tabelle.Laboratorio.png" />
+    <Content Include="Documentazione\GAM_Linux.png" />
+    <Content Include="Documentazione\global_error_handling.png" />
+    <Content Include="Documentazione\LaboratorioCRUD.png" />
+    <Content Include="Documentazione\LaboratorioFormCodice.png" />
+    <Content Include="Documentazione\LaboratorioSQL.png" />
+    <Content Include="Documentazione\LaboratorioSQLAndClass.png" />
+    <Content Include="Documentazione\Layout Colloquio.png" />
+    <Content Include="Documentazione\Layout DBCompletto.png" />
+    <Content Include="Documentazione\Layout Entita.png" />
+    <Content Include="Documentazione\Layout Laboratorio.png" />
+    <Content Include="Documentazione\Layout Minore.png" />
+    <Content Include="Documentazione\Layout Plenaria.png" />
+    <Content Include="Documentazione\linux.png" />
+    <Content Include="Documentazione\Logo_unina.gif" />
+    <Content Include="Documentazione\macos.png" />
+    <Content Include="Documentazione\Microsoft_.NET_logo.png" />
+    <Content Include="Documentazione\Mono_project_logo.png" />
+    <Content Include="Documentazione\MVC.png" />
+    <Content Include="Documentazione\mvp full.png" />
+    <Content Include="Documentazione\MVP.png" />
+    <Content Include="Documentazione\MVP_passive_view.png" />
+    <Content Include="Documentazione\MVP_supervising_controller.png" />
+    <Content Include="Documentazione\presentazione.txt" />
+    <Content Include="Documentazione\sito-ISF-esteso-1.png" />
+    <Content Include="Documentazione\Specifica dei requisiti - GAM Generale.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\book_addresses.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\page_edit.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\page_number.png" />
+    <None Include="Resources\umbrella.png" />
+    <None Include="Resources\heart.png" />
+    <None Include="Resources\user_detective_gray.png" />
+    <None Include="Resources\users_men_women.png" />
+    <None Include="Resources\save_close.png" />
+    <None Include="Resources\sfondo.jpg" />
+    <None Include="Resources\compass.png" />
+    <None Include="Resources\comments.png" />
+    <None Include="Resources\circus.png" />
+    <None Include="Resources\check_box_uncheck.png" />
+    <None Include="Resources\check_box.png" />
+    <None Include="Resources\user_silhouette.png" />
+    <None Include="Resources\award_star_gold_blue.png" />
+    <None Include="Resources\telephone.png" />
+    <None Include="Resources\house_one.png" />
+    <None Include="Resources\to_do_list_checked_all.png" />
+    <None Include="Resources\door_out.png" />
+    <None Include="Resources\door_in1.png" />
+    <None Include="Resources\entity.png" />
+    <None Include="Resources\door_open.png" />
+    <None Include="Resources\page_add.png" />
+    <None Include="Resources\folder_page.png" />
+    <None Include="Resources\broom.png" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\door_in.png" />
+    <None Include="Resources\setting_tools.png" />
+    <None Include="Resources\server_find.png" />
+    <None Include="Firebird\Firebird-2.5.4.26856_0_Win32.exe" />
+    <Content Include="Documentazione\TcLaboratorio.png" />
+    <Content Include="Documentazione\test_failed.png" />
+    <Content Include="Documentazione\UI GAM Laboratorio.png" />
+    <Content Include="Documentazione\windows.png" />
+    <Content Include="fdb.ico" />
+    <Content Include="GAM#.ico" />
+    <Content Include="Images\GAM.ico" />
+    <Content Include="Images\GAM.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="libs\FirebirdSql.Data.FirebirdClient-4.8.0.0-NET40\FirebirdSql.Data.FirebirdClient.dll" />
+    <None Include="libs\FirebirdSql.Data.FirebirdClient-4.8.0.0-NET40\FirebirdSql.Data.FirebirdClient.pdb" />
+    <Content Include="Novità.htm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\maionemikyWS\GAMSharp.maionemikyWS.Comparazione.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\maionemikyWS\GAMSharp.maionemikyWS.CredenzialiRisultato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\maionemikyWS\GAMSharp.maionemikyWS.CredenzialiRisultatoFull.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\maionemikyWS\GAMSharp.maionemikyWS.Licenza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\maionemikyWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\maionemikyWS\configuration.svcinfo" />
+    <None Include="Service References\maionemikyWS\configuration91.svcinfo" />
+    <None Include="Service References\maionemikyWS\emailsending.disco" />
+    <None Include="Resources\favicons.png" />
+    <None Include="Resources\accept_button.png" />
+    <None Include="Resources\zoom.png" />
+    <None Include="Resources\user_edit.png" />
+    <None Include="Resources\user_add.png" />
+    <None Include="Resources\calendar_edit.png" />
+    <None Include="Resources\calendar_add.png" />
+    <None Include="Resources\gear_in.png" />
+    <None Include="Resources\resultset_previous.png" />
+    <None Include="Resources\resultset_next.png" />
+    <None Include="Resources\resultset_last.png" />
+    <None Include="Resources\resultset_first.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\arrow_out.png" />
+    <None Include="Resources\arrow_down.png" />
+    <None Include="Resources\application_lightning.png" />
+    <None Include="Resources\application_tile_vertical.png" />
+    <None Include="Resources\application_tile_horizontal.png" />
+    <None Include="Resources\application_cascade.png" />
+    <None Include="Resources\application_double.png" />
+    <None Include="Resources\sitemap_application_blue.png" />
+    <None Include="Resources\application_delete.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\user_green.ico" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\application_edit.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\table_gear.png" />
+    <None Include="Resources\database_server.png" />
+    <None Include="Resources\user_sailor.png" />
+    <None Include="Resources\user_waiter_female.png" />
+    <None Include="Resources\session_idle_time.png" />
+    <None Include="Resources\palette.png" />
+    <None Include="Resources\user_green.png" />
+    <None Include="Resources\category_group.png" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\user_suit.png" />
+    <None Include="Resources\screen_error.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\bug.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\new_window.png" />
+    <None Include="Resources\hat.png" />
+    <Content Include="DB\SQL\DB.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\GAM.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\maionemikyWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GlobalFunctions\GlobalFunctions.csproj">
+      <Project>{D6E954BE-A88C-46A0-A87C-4A79C0BA188D}</Project>
+      <Name>GlobalFunctions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

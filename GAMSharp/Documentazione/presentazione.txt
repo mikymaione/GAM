@@ -1,0 +1,133 @@
+2
+Il Centro “La Tenda” ONLUS (NA) nasce nel 1981 per volontà di un giovane sacerdote Don Antonio Vitiello e di un gruppo di volontari impegnati nella ricerca di risposte di accoglienza ad un disagio, allora quasi sconosciuto ma sempre più avvertito, rappresentato da persone e famiglie svantaggiate, in via prioritaria ma non esclusiva a causa di una tossicodipendenza. Da sempre è attiva sul fronte della prevenzione del disagio e della devianza giovanile; negli ultimi anni ha moltiplicato gli interventi a favore dei minori e degli adolescenti, anche immigrati, realizzando un Centro diurno polivalente per le famiglie e i minori, numerosi progetti mirati con le scuole e con altre associazioni sull’intera area metropolitana e provinciale.
+L’associazione chiede una soluzione informatica per gestire le interazioni del minore con il centro e con le agenzie educative collaboranti.
+
+3
+Il centro non dispone di nessun software per la gestione delle sue attività. Attualmente vengono salvati sui singoli computer, dei documenti redatti con Microsoft Word, senza una gestione centralizzata dei documenti.
+La maggior parte dei computer aveva Windows XP sp3, alcuni Windows 7, erano tutti senza gruppo di continuità, ed il server era un Windows NT 3.5 Server (del 1995). Proposi un gestionale desktop client-server in .NET 2.0, che poteva essere eseguito su tutti i computer, poiché gli XP avevano tutti il service pack 3. La [s]fortuna volle che a settembre 2015 il server fu attaccato da un Crypto Locker, e fu formattato come Windows 7.
+
+4
+La prima versione di .NET è stata diffusa nel 2002. La sua peculiarità è l'essere indipendente dalla versione operativa di Windows su cui è installata, e di includere molte funzionalità progettate espressamente per integrarsi in ambiente internet e garantire il massimo grado di sicurezza e integrità dei dati. Utilizza in modo esteso il concetto di modularità dei componenti software (Component Oriented Programming), proponendosi così come evoluzione dell'esistente modello COM (Component Object Model).
+La CLR (Common Language Runtime) è un insieme di librerie che, insieme alla classe di librerie di base denominata FCL (Framework Class Library), è progettata per poter funzionare con qualsiasi sistema operativo. Il compilatore Just In Time esegue un codice assembly denominato CIL (Common Intermediate Language). È inoltre possibile:
+-accedere a componenti scritti in altri linguaggi;
+-quando il sistema operativo sottostante è Microsoft Windows, accedere ai suoi servizi e alle sue API;
+-accedere ai Servizi Web utilizzando il protocollo SOAP.
+Il Common Language Runtime (CLR), il Common Intermediate Language (CIL) ed il linguaggio C# sono simili rispettivamente alla Java Virtual Machine, al bytecode e al linguaggio Java della Oracle Corporation, con cui sono in forte concorrenza. Entrambi utilizzano un proprio bytecode intermedio. Il bytecode di .NET è progettato per essere compilato al momento dell'esecuzione (just in time compilation detta anche JITting), come il bytecode di Java. Al momento, con le ultime versioni rilasciate .NET è disponibile per tutte le piattaforme quali: Linux, Unix e Mac OSX, mentre Java è portabile su qualsiasi piattaforma fin dalla nascita. La Java EE (Java Platform, Enterprise Edition) di Oracle fornisce funzionalità leggermente superiori ad altre tecnologie Microsoft, come COM+ e MSMQ, che lavorano peraltro in modo integrato con i sistemi operativi Windows. .NET fa un uso estensivo ed astratto di tutte queste tecnologie ormai consolidate. 
+	
+C# è, in un certo senso, il linguaggio che meglio degli altri descrive le linee guida sulle quali ogni programma .NET gira. Infatti è stato creato da Microsoft specificatamente per la programmazione nel Framework .NET. I suoi tipi di dati "primitivi" hanno una corrispondenza univoca con i tipi .NET e molte delle sue astrazioni, come classi, interfacce, delegati ed eccezioni, sono particolarmente adatte a gestire il .NET framework. 
+Definire in forma classica C# come linguaggio interpretato o compilato nel senso classico dei termini è piuttosto complicato. In effetti è ambedue le cose allo stesso tempo. Data la sua stretta integrazione con il Framework .NET, i codici sorgente scritti in C# sono normalmente compilati secondo i criteri JIT. In pratica, la trasformazione in codice macchina (ovvero eseguito direttamente dalla CPU) viene compiuta solo all'atto di caricamento ed esecuzione del programma. In prima istanza il codice sorgente viene convertito dal framework in un codice intermedio detto CIL e solo all'esecuzione del programma il CLR specifico per il sistema operativo utilizzato converte il CIL in linguaggio macchina specifico per l'hardware ospite, man mano che viene eseguito. Ciò comporta che l'esecuzione del codice può risultare più lenta alla prima esecuzione diventando poi più veloce. Inoltre, vengono tipicamente svolte durante la compilazione stessa delle ottimizzazioni progressive del codice macchina, producendo così un codice eseguito più velocemente e teoricamente "ottimale" solo dopo alcune esecuzioni complete dello stesso. 
+La sintassi di base del C# è spesso molto simile o identica a quella dei linguaggi C, C++ e Java. Alcune delle caratteristiche di base sono:
+-I nomi di variabili, funzioni, classi e altri elementi sono sempre sensibili alle minuscole, ovvero "case-sensitive".
+-Ogni specifica dev'essere chiusa dal carattere punto e virgola (;).
+-Le parentesi graffe ({}) sono usate per raggruppare specifiche.
+-Secondo le consuetudini dei linguaggi orientati agli oggetti, le specifiche sono di regola raggruppate in metodi (ovvero funzioni), i metodi sono raggruppati in classi, e le classi sono raggruppate nei namespace.
+
+ADO.NET è un set di classi che espongono servizi di accesso ai dati per i programmatori .NET Framework. ADO.NET fornisce un set completo per la creazione di applicazioni distribuite e abilitate alla condivisione dei dati. ADO.NET è parte integrante di .NET Framework e consente l'accesso ai dati relazionali, ai dati XML e ai dati dell'applicazione. Supporta numerose esigenze di sviluppo, inclusa la creazione di client di database front-end e di oggetti business di livello intermedio, usati da applicazioni, strumenti, linguaggi o browser Internet.
+ADO.NET fornisce uniformità di accesso sia per origini dati quali SQL Server e XML, sia per origini dati esposte tramite OLE DB e ODBC. Le applicazioni consumer che supportano la condivisione dei dati sono in grado di usare ADO.NET per connettersi a tali origini dati e recuperare, gestire e aggiornare i dati contenuti.
+ADO.NET consente di separare l'accesso ai dati dalla modifica dei dati in componenti discreti, utilizzabili separatamente o congiuntamente. In ADO.NET sono inclusi i provider di dati .NET Framework per la connessione a un database, l'esecuzione di comandi e il recupero di risultati. Tali risultati vengono elaborati direttamente, inseriti nell'oggetto DataSet di ADO.NET in modo da consentirne l'esposizione adeguata all'utente, combinati con dati provenienti da più origini o passati tra livelli. È inoltre possibile usare l'oggetto DataSet indipendentemente da un provider di dati .NET Framework per gestire i dati locali dell'applicazione o derivati da XML.
+
+Visual Studio offre funzionalità di C# e Visual Basic che migliorano la programmazione di Microsoft Office. Tra le utili funzionalità di C# sono disponibili gli argomenti denominati e facoltativi e i valori restituiti di tipo dynamic. Nella programmazione COM è possibile omettere la parola chiave ref e accedere alle proprietà indicizzate. Le funzionalità di Visual Basic includono le proprietà implementate automaticamente, le istruzioni nelle espressioni lambda e gli inizializzatori di insieme.
+Entrambi i linguaggi consentono di incorporare informazioni sul tipo, in modo da distribuire gli assembly che interagiscono con i componenti COM senza distribuire assembly di interoperabilità primari (PIA) al computer dell'utente
+
+Mono è un progetto open source coordinato da .NET Foundation per creare un insieme di strumenti compatibili con il Framework .NET, secondo gli standard ECMA.
+La macchina virtuale di Mono contiene un motore JIT per vari processori: x86, SPARC, PowerPC, ARM, s390 (in modalità a 32 bit) e x86-64 e SPARC a 64 bit. La VM può eseguire una compilazione just-in-time o può pre-compilare il codice in codice nativo. Per altre architetture hardware esiste solo un interprete.
+
+5
+Firebird SQL è un database management system relazionale (RDBMS), open source distribuito sotto licenza IPL.
+Supporta numerosi sistemi operativi tra i quali: Linux, Windows, FreeBSD, macOS.
+Le principali caratteristiche di questo Database sono l'alto livello di conformità con gli standard SQL, la completa integrazione con molti linguaggi di programmazione e la facile installazione e manutenzione del software.
+Il database utilizzato da Firebird è normalmente un file con estensione .fdb, la massima dimensione consentita è pari alla dimensione massima di un file supportata da uno specifico sistema operativo, Firebird, però, permette di suddividere un singolo database in più file (massimo 65536) e quindi sarà possibile gestire un database che abbia una dimensione limitata solo dalla capienza fisica dell'hard disk.
+Il numero di client che possono contemporaneamente collegarsi al server è teoricamente illimitato, ma tale numero dipende strettamente dal sistema operativo e dall'hardware in uso.
+
+6
+Nell’ingegneria del software, un design pattern può essere definito “una soluzione progettuale generale ad un problema ricorrente”.
+Un design pattern è una descrizione o un modello da applicare per risolvere un problema nel contesto della realizzazione di sistemi software orientati agli oggetti. Inoltre, un design pattern è indipendente dal linguaggio e dall’implementazione, è una micro-architettura e non è meccanicamente applicabile.
+Un design pattern è costituito da quattro elementi essenziali, che ne mettono in evidenza le caratteristiche e lo rendono univoco:
+-Nome: costituito da una o più parole che rappresentino il pattern stesso e ne descrivano il problema;
+-Problema: descrizione della situazione alla quale si può applicare il pattern, ad esempio una lista di condizioni che spieghi la necessità dell’utilizzo del pattern;
+-Soluzione: descrizione delle modalità di utilizzo degli elementi che costituiscono il progetto con le relazioni e le relative implicazioni, al fine di implementare i requisiti individuati dal problema;
+-Conseguenze: risultati e vincoli scaturiti dall’applicazione del pattern, importanti per valutare modelli alternativi e per stimare i vantaggi apportati dall’applicazione del pattern.
+
+GAM# è una applicazione sviluppata secondo l’architettura Client-server a 2 livelli.
+Server:
+-computer sul quale è stato installato un RDBMS (nel nostro caso è stato usato Firebird SQL);
+-computer sul quale è stato installato GAM#. Al momento dell’installazione GAM# rende la cartella in cui risiede condivisa.
+Client:
+-computer su cui è presente o il .NET framework (l'argomento in dettaglio a pagina 17) o il Mono framework, che ha accesso alla cartella condivisa di GAM# sul server, da cui si può eseguire il programma ed accedere ai documenti Word.
+
+7
+Il workflow che il programma dovrà seguire, in linee generali, è quello mostrato nell’illustrazione 1:
+-All’arrivo al centro si dovranno memorizzare i dati del minore e dei tutori.
+-Il minore verrà aggiunto ad una lista di attesa, verrà generata una “scheda primo contatto” simile a quella fornita dal Comune di Napoli.
+-Il software dovrà dare la possibilità di ricercare per parametri nella lista d’attesa.
+-Una volta accettato verrà generata la scheda d’iscrizione, e il minore risulterà iscritto.
+-Il minore verrà inserito in un gruppo. I gruppi sono divisi per scaglioni di età.
+-Minore e tutori, in accordo, sceglieranno dei laboratori e delle materie (le offerta sono stagionali e variano a seconda dello scaglione d’età).
+-Il software dovrà memorizzare anche eventuali attività di recupero esterne svolte dal minore.
+-Effettuata la scelta verrà generato il documento di “patto educativo” e verrà stampato un calendario per i tutori (calendario stampabile anche durante l’anno)
+-Per ogni minore il software dovrà gestire, i laboratori a cui è iscritto, le materie che segue, le attività esterne, i colloqui con i tutori. Dovrà essere sempre possibile stampare sia il calendario sia il modello “PEI”1.
+-Il software dovrà tenere traccia delle presenze dei ragazzi ai laboratori.
+-Il software dovrà dare la possibilità di creare un calendario generico delle attività annuali.
+
+Seguono tutti i possibili scenari d’uso del software per i quali sono state sviluppate le funzionalità atte a svolgerli:
+1. Creazione laboratori e materie: il personale addetto crea nuovi laboratori e nuove materie, e stampa il calendario generico annuale;
+2. Reception, arriva un minore con i suoi tutori per l’iscrizione: il personale addetto alla reception inserisce i dati del minore e dei tutori, salva, e genera il documento “primo contatto”;
+3. Gestione liste d’attesa: sono disponibili N nuovi posti: il personale addetto alla gestione delle liste d’attesa, dopo aver eseguito alcune ricerche parametriche sulla lista sceglie N ragazzi e chiama i tutori;
+4. Gestione liste d’attesa: minore chiamato per scorrimento: il minore con i tutori giunge al centro perché ha ricevuto la telefonata di accettazione, viene stampata la scheda d’iscrizione e risulta iscritto;
+5. Il minore e la famiglia sono tenuti a scegliere laboratori e materie: l’addetto all’aiuto per la scelta dei laboratori, dà alcune delucidazioni, e iscrive il minore ad alcuni laboratori ed ad alcune materie. Aggiunge anche eventuali attività di recupero esterne. Stampa il “patto educativo” e il calendario;
+6. Gestione presenze ai laboratori: dopo alcune settimane, l’insegnante di un laboratorio, decide di registrare nel programma le presenze dei ragazzi ai laboratori, che ha segnato su carta;
+7. Colloquio periodico con i tutori: l’insegnante o lo psicologo, tengono periodicamente dei colloqui, quindi hanno la necessità di inserire nel programma un sunto e le loro valutazioni del colloquio effettuato.
+
+8
+Anagrafiche
+Le entità anagrafiche presenti nel sistema derivano prevalentemente da Lead e Persona. La differenza tra queste due entità è che la seconda ha come chiave primaria e univoca il codice fiscale, mentre la prima utilizza un semplice auto-incrementale, questo perché tutte le entità che derivano da Persona hanno rapporti diretti con il Centro e devono essere censite in modo preciso.
+
+9
+Il pattern MVP, risale all’anno 1979 ed il suo nome originario era “Thing Model View Editor” (coniato dalla Taligent), nel tempo poi evoluto grazie soprattutto a Martin Fowler che ne ha sviluppato due diverse implementazioni Supervising Controller e Passive View. La soluzione proposta prevede il disaccoppiamento totale della View dalle logiche di manipolazione del Model tramite l’introduzione di un componente, il Presenter, che funga da intermediario e da coordinatore in risposta alle interazioni con l’utente. Ma vediamo nel dettaglio gli attori coinvolti:
+View (visualizza i dati contenuti nel model e raccoglie gli input dell’utente);
+Model (rappresenta il dominio di business ed incapsula lo stato dell’applicazione);
+Presenter (interagisce con il model in base alle richieste ricevute dalla view).
+
+Schema di interazione – MVP Passive View
+In questo caso la view non conosce il modello (non vi è quindi alcuna dipendenza tra la View ed il Model) ed il presenter è l’unico responsabile dell’aggiornamento dei dati visualizzati.
+L’utente interagisce in qualche modo con la View;
+La View notifica al Presenter dell’interazione;
+Il Presenter opera sul Model eventualmente modificandone lo stato in rispetto all’interazione notificata dalla View;
+Il Presenter aggiorna la View in base ai nuovi dati esposti dal Model.
+
+Schema di interazione – MVP Supervising Controller
+In questo tipo di implementazione la view conosce il modello e generalmente è connessa ad esso tramite un meccanismo di data binding dichiarativo che permette l’aggiornamento dei dati da visualizzare (in situazioni complesse dove il data binding dichiarativo non è sufficiente a garantire tale l’aggiornamento è necessario l’intervento del presenter).
+L’utente interagisce in qualche modo con la View;
+La View notifica al Presenter dell’interazione;
+Il Presenter opera sul Model eventualmente modificandone lo stato in rispetto all’interazione notificata dalla View;
+La View viene aggiornata in base ai nuovi dati esposti dal Model tramite un meccanismo di data binding;
+Il Presenter aggiorna i dati della view che non possono essere agganciati a quest’ultima tramite data binding dichiarativo.
+Nel nostro caso si è scelto di utilizzare MVP – Supervising Controller, per sfruttare le funzionalità di data-binding statico.
+
+10
+Ogni finestra di GAM# è di tipo modale, e cioè non è possibile utilizzare le altre finestre del programma finché non si è chiusa l’ultima finestra aperta. In questo modo si obbliga l’utente a fare un task alla volta; esse implementano il modello CRUD.
+Il modello CRUD (Create, Read, Update, Delete) si riferisce alle quattro funzionalità che devono essere implementate per poter considerare completa un'applicazione RESTful; Ad ogni operazione corrisponde un'equivalente istruzione in linguaggio SQL:
+
+11
+L’ultima fase del processo di realizzazione del software è stata il testing, fase che ha come scopo principale quello di verificare la correttezza del software sviluppato, identificando eventuali differenze tra il comportamento atteso del software, descritto nelle specifiche del progetto, ed il comportamento osservato dallo stesso. A tal proposito è stato realizzato un piano di testing atto ad accertare il corretto funzionamento dell’applicazione. Questo piano prevede due fasi distinte di testing (distinte per modalità di approccio):
+
+-Al completamento dell’implementazione di ogni singolo modulo, sono stati testati i metodi al fine di controllare eventuali malfunzionamenti, che i requisiti siano stati rispettati e che i risultati attesi siano stati rispettati nell’esecuzione dei moduli testati. Il metodo scelto per collaudare le funzionalità dei moduli è il Black Box Testing. Tale testing non è una vera tipologia di test, ma più una strategia di sperimentazione che non richiede conoscenza di codice e di funzionamento interno del sistema. Le prove effettuate sono incentrate sul testing dei requisiti e delle funzionalità del software. La difficoltà della strategia Black Box sta nel selezionare dati di input adeguati che testino le funzionalità ed i requisiti del sistema. Tale selezione è possibile farla tramite:
+--Classi di equivalenza: rappresentano un insieme di stati validi o non validi per una condizione sulle variabili d’ingresso. Per quanto riguarda i valori delle variabili d’ingresso bisogna fare delle distinzioni in base al tipo definito. Infatti nel caso in cui la variabile possa avere valori compresi in un intervallo bisogna creare almeno una classe di test valida per un valore interno all’intervallo, una non valida per valori inferiori al minimo valore dell’intervallo, una non valida per valori superiori al massimo valore dell’intervallo ed una classe di test per valori uguali o ravvicinati agli estremi dell’intervallo. Nel caso di variabile con valore specifico bisogna generare una classe valida per il valore specificato, una non valida per valori inferiori a quello e una non valida per valori superiori. Se la condizione sulle variabili di ingresso specifica invece un elemento di un insieme discreto bisogna creare una classe valida per ogni elemento dell’insieme e una non valida per valori non appartenenti all’insieme. Infine, nel caso di specifica di un valore booleano sono richieste una classe valida per il valore TRUE ed una non valida per il valore FALSE. In conclusione, le regole pratiche per la scelta delle classi di equivalenza richiedono che ogni classe di equivalenza sia coperta da almeno un caso di test, ossia ogni classe di test non valida deve corrispondere ad un solo caso di test. Al fine di rendere migliore tale fase di test bisogna fare in modo che ogni caso di test per classi di equivalenza valide comprenda il maggior numero di classi valide ancora scoperte.
+--Boundary Testing: tipologia di testing nella quale è previsto che i test comprendano i valori limite. In pratica si testa il software verificando valori per le variabili di input all’estremo inferiore, immediatamente sopra il valore minimo, un valore intermedio, immediatamente sotto il valore massimo e all’estremo superiore.
+
+-La seconda metodologia utilizzata per il collaudo dell’applicazione è costituita dagli Unit Testing. Essi sono test programmatici scritti (nel nostro caso) in codice C# e definiti in una classe Test contenente i Test Method. Un Test Method non è altro che una procedura che determina un risultato del test. I Test Method possono utilizzare altro codice sorgente chiamando direttamente i metodi di una classe, inviando i parametri appropriati. Questa tipologia di testing racchiude in sé gli aspetti caratteristici delle più comuni strategie di testing (White Box e Black Box Testing). Infatti, grazie alle istruzioni di Assert presenti negli Unit Test, è possibile verificare la corrispondenza tra il valore atteso di un metodo con quello ottenuto (Black Box Testing) e, attivando la funzionalità denominata CodeCoverage, è possibile verificare quali sono e quante volte vengono eseguite le istruzioni dei metodi da testare (White Box Testing). In Visual Studio è possibile creare Unit Test adoperando la funzionalità di generazione del codice che permette di generare in modo automatico il codice sorgente iniziale del test. È comunque possibile scrivere il test completamente a mano.
+
+Gli unit test sono codice sorgente definito in una classe Test contenente dei Test Method, i quali possono richiamare direttamente i metodi dei moduli da testare, inviando i parametri appropriati. Un punto di forza di tale tipologia di test è la possibilità di poter verificare, tramite il metodo Assert, la corrispondenza del valore atteso con quello ottenuto. È possibile creare unit test o utilizzando una funzionalità che permetta di generare codice con l’obiettivo di realizzare il codice sorgente iniziale del test, oppure scrivendo il test completamente a mano. Inoltre possiamo sottolineare che gli unit test, al momento della compilazione precedente il rilascio dell’applicazione, vengono richiamati in automatico, in modo che possa essere impedito il rilascio nel caso in cui qualche metodo non superi il test definito. Infatti, è necessario creare uno unit test per ogni metodo che si desidera testare e, inoltre, non esistendo un ordine preciso di richiamo dei vari test, è importante specificare le priorità nel testare prima un metodo invece che un altro. La vera importanza degli unit test risulta soprattutto dal fatto che è possibile verificare il funzionamento di tutti i metodi, dopo aver effettuato delle modifiche, ed inoltre forniscono la possibilità di sapere quali blocchi di codice sono stati testati, quali solo testati parzialmente e quali non sono mai testati, in modo che lo sviluppatore possa capire e quindi creare i test mancanti.
+
+Il primo passo da fare è creare lo Unit Test tramite le procedure guidate messe a disposizione da Visual Studio o da MonoDevelop e dal tool NUnit. Una volta terminata tale procedura viene generato il codice sorgente iniziale del test e si procede con il completamento del codice del test method.
+Come si può notare, il test prevede la realizzazione di una classe TcLaboratorio, all’interno della quale vengono definiti i diversi metodi di test. Il metodo Caricamento serve per effettuare il test vero e proprio e in esso troviamo due istruzioni Assert che verificano che il valore atteso (il primo parametro) sia uguale al valore ottenuto richiamando il metodo da testare (il secondo parametro). Nella prima istruzione Assert, verifichiamo che il metodo Ricerca non abbia restituito errori. Nella seconda istruzione Assert, verifichiamo invece se per ogni Laboratorio restituito dal metodo Ricerca, il metodo Carica recuperi dal DB lo stesso record. Infatti passiamo al metodo Carica un oggetto avente un ID realmente esistente nel sistema, e quindi il metodo deve restituire un oggetto contenente tutti i dettagli di quel Laboratorio, compreso il suo ID. Il test è da considerarsi superato solo nel momento in cui tutte le Assert verificano l’uguaglianza dei relativi parametri. Se ciò si verifica NUnit mostra una schermata in cui, l’esito del test, è evidenziato da una barra di colore verde con il numero di errori riscontrato pari a zero, altrimenti da una barra di colore rosso e dalla presenza di errori.
+
+12
+Ampliamenti
+L’applicazione, anche se risulta essere completa per ciò che riguarda i requisiti indicati in fase di analisi, ha una progettazione tale da permettere eventuali personalizzazioni del software, eventualmente richieste in futuro dalla ONLUS, in modo semplice senza dover modificare l’intera applicazione.
+
+Portabilità
+Essendo stato scritto in C# senza l’uso di librerie esterne (tranne quelle relative al DB), la soluzione può tranquillamente essere compilata per i sistemi che supportano il Mono Framework. Infatti al momento della stesura di questo documento, la soluzione è stata aperta con MonoDevelop e compilata su Ubuntu 17.04, senza difficoltà.
+
+Web
+Essendo la UI, logicalmente separata, si potrebbero creare delle WebForm con ASP.NET, implementando lo stesso tipo di interfacce wBase, wBaseDettaglio, wBaseRicerca, e portare il tutto sul web senza toccare la business logic.
